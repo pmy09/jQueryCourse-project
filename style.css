@@ -6,7 +6,7 @@ body {
   background-color: #FFF;
   padding: 12px;
   margin: 12px;
-  height: 100%;
+
 }
 
 .item {
@@ -28,4 +28,8 @@ body {
 .item .price {
   margin-top: 8px;
   margin-bottom: 8px
+}
+
+.item .more-info {
+  display: none;
 }
