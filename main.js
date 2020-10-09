@@ -1,5 +1,6 @@
 $(document).ready(function() {
-  console.log($('#container').find('.hot').children().last().prev().addClass('highlight'));
+  $('#snow').parent().find('.title').addClass('highlight');
 
-
+  console.log($('#snow').closest('.temperature'));
+  console.log($('#snow').closest('#container'));
 });
