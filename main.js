@@ -1,6 +1,5 @@
 $(document).ready(function() {
-  //$('.non-solid, .solid').addClass('highlight');
-  $('#container >>> .non-solid').addClass('highlight');
+  console.log($('#container').find('.hot').children('.non-solid').addClass('highlight'));
 
 
 });
