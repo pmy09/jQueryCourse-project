@@ -1,6 +1,8 @@
-function addItem(name, description, price, moreInfo){
+var cart = 0;
+
+function addItem(id, name, description, price, moreInfo){
   let html= '';
-  html += '<div class="item">';
+  html += '<div class="item" data-id="' + id + '">';
   html += '<div class="name">'+ name + '</div>';
   html += '<img src="assets/beach.jpg"></img>';
   html += '<div class="description">'+ description +'</div>';
@@ -39,8 +41,8 @@ $(document).ready(function() {
     let items = response.items;
     //console.log(items);
     items.forEach(function(item){
-      console.log(item);
-      addItem(item.name, item.description, item.price, item.moreInfo);
+      //console.log(item);
+      addItem(item.id, item.name, item.description, item.price, item.moreInfo);
 
     });
 
@@ -48,5 +50,26 @@ $(document).ready(function() {
     console.log(errorMessage);
   }).always(function(){
 
+  });
+
+  $('#container').on('click', '.item-add', function(){
+    let id = $(this).parent().data('id');
+    //console.log(id);
+    $.ajax('data/addToCart.json', {
+      type: 'post',
+      data: {id: id },
+      dataType: 'json',
+      contentType: 'application/json'
+
+    }).done(function(response){
+      //console.log(response);
+      if (response.message === 'success'){
+        let price = response.price;
+        console.log(price);
+        cart += price;
+
+        $('#cart-container').text('$' + cart);
+      }
+    })
   })
 });
