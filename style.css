@@ -15,7 +15,9 @@ body {
   padding: 12px;
 }
 
-
+#newsletter-frequency {
+  display: none;
+}
 .item {
   width: 200px;
   background-color: #DDD;
