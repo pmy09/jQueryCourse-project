@@ -25,6 +25,7 @@ $(document).ready(function() {
     //$(this).parent().find('.more-info').toggle('fast');
     //$(this).parent().find('.more-info').fadeToggle('slow');
     $(this).parent().find('.more-info').slideToggle('slow');
+    $(this).animate({"opacity": 0.5, "margin-left": 10}, 'fast').animate({"opacity": 1.0, "margin-left": 0}, 'fast');
   })
 
   $('#container').on('click','.item-remove', function(){
