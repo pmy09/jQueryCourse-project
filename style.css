@@ -1,4 +1,7 @@
 .highlight {
-  color : #F00;
+  color: #00F;
 }
 
+.item {
+  margin-left: 8px;
+}
