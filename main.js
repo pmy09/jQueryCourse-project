@@ -19,6 +19,12 @@ $(document).ready(function() {
 
     $('#container').prepend(html)
   });
+
+  $('#container').on('click','.more-info-link', function(event){
+    event.preventDefault();
+    $(this).parent().find('.more-info').toggle();
+  })
+
   $('#container').on('click','.item-remove', function(){
     //console.log('Hello');
     $(this).parent().remove();
