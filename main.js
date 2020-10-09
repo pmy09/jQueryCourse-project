@@ -1,5 +1,6 @@
 console.log('Hello World!')
 $(document).ready(function() {
-  console.log('We are ready')
+  console.log($(document));
+  $('body').html('<strong>Hello World!</strong>');
 
-})
+});
