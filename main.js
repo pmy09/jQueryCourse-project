@@ -70,8 +70,8 @@ $(document).ready(function() {
 
         $('#cart-container').text('$' + cart);
       }
-    })
-  })
+    });
+  });
 
   $('#newsletter-checkbox').on('change', function(){
     if ($(this).is(':checked')) {
@@ -84,4 +84,23 @@ $(document).ready(function() {
     }
   });
   $('#newsletter-checkbox').trigger('change');
+
+  /*$('#submit-cart').on('click', function(event){
+    event.preventDefault();*/
+
+  $('#cart-form').on('submit', function(event){
+    event.preventDefault();
+
+    let data = {form: $(this).serialize(), price: cart }
+
+    console.log(data.form);
+
+    $.ajax($(this).attr('action'), {
+      type: 'post',
+      data: data
+    }).done(function(response){
+      $('#feedback-message').text(response.message);
+      alert(data.form + ': ' + response.message);
+    })
+  });
 });
