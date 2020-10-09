@@ -1,8 +1,8 @@
 $(document).ready(function() {
-  $('.box').on('click', function() {
+  $('.box').on('click', '.box-button', function() {
     //console.log('Hello')
-    $(this).toggleClass('highlight');
-  })
+    $(this).parent().toggleClass('highlight');
+  });
 
 
 });
