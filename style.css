@@ -4,6 +4,17 @@
   background-color: #CFC;
 }
 
+.box-button {
+  width: 100px;
+  height: 20px;
+  background-color: #CCF;
+  
+  text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .highlight {
   background-color: #FCC;
 }
