@@ -1,5 +1,6 @@
 $(document).ready(function() {
-  $('#fire').addClass('highlight');
+  //$('.non-solid, .solid').addClass('highlight');
+  $('#container >>> .non-solid').addClass('highlight');
 
 
 });
