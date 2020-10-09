@@ -32,4 +32,8 @@ $(document).ready(function() {
     //console.log('Hello');
     $(this).parent().remove();
   });
+
+  $.ajax('data/item.json', function(response){
+    console.log(response);
+  })
 });
